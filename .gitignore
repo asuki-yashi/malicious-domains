@@ -1,0 +1,12 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python / venv (अगर बाद में scripts जोड़ो)
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
